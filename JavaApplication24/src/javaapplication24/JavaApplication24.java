@@ -16,13 +16,13 @@ import java.io.IOException;
  */
 public class JavaApplication24 {
 
-    /**
+    /** https://github.com/sba24150/PM_CA1
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
     
-    System.out.println("Paolo Mazzocco Student No. sba 24150");
+    /*Paolo Mazzocco Student No. sba 24150 */
     
     int count = 0;
     String name = "";
@@ -94,7 +94,7 @@ public class JavaApplication24 {
                 /*next line is if the class is not 1 or 2 or 3 */
                 if ((code == 0) || ( code > 3)){                    
                     total = purchase;
-                    System.out.println("Class value not conform for one of the customer");
+                    System.out.println("Class value not conform for one of the customers");
                     
                 /* the below instruction will write the name followed by the total*/
                 /* I callled the final value Total so it is less confusing*/
