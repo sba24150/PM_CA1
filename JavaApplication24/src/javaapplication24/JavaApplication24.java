@@ -23,8 +23,10 @@ public class JavaApplication24 {
     System.out.println("Paolo Mazzocco Student No. sba 24150");
     
     int count = 0;
-    
-    
+    String name = "";
+    double purchase = 0;
+    int code = 0;
+    int year = 0;
     
     
     
@@ -34,8 +36,24 @@ public class JavaApplication24 {
         try {
             BufferedReader br = new BufferedReader (new FileReader (filePath));
             String line;
+            
+            /* Created loop to read all the values of the document*/
             while ((line = br.readLine()) !=null ){
                 int r = count % 4 ;
+                
+                if (r == 0)
+                    name = line;
+                
+                else if (r == 1)
+                    purchase = Double.parseDouble(line);
+                
+                else if (r == 2)
+                    code = Integer.parseInt(line);
+                
+                else if (r == 3)
+                    year = Integer.parseInt(line);
+                
+                
             
                 
                 
