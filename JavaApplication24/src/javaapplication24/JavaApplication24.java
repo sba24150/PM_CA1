@@ -22,29 +22,44 @@ public class JavaApplication24 {
     
     System.out.println("Paolo Mazzocco Student No. sba 24150");
     
+    int count = 0;
     
     
     
-    /* This is the path where the file is stored, it is in the same folder of the program*/
-    String filePath = "customers.txt";
     
-    try {
-        BufferedReader br = new BufferedReader (new FileReader (filePath));
+    
+        /* This is the path where the file is stored, it is in the same folder of the program*/
+        String filePath = "customers.txt";
+    
+        try {
+            BufferedReader br = new BufferedReader (new FileReader (filePath));
+            String line;
+            while ((line = br.readLine()) !=null ){
+                int r = count % 4 ;
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                count ++ ;
+                System.out.println(line);
+                
+            }
         
         
-    }
+        }
     
     
     catch (IOException e ){
         e. printStackTrace();
         
     
-    
-        
-        
-        
         }
     
-}
+    }
 
 }
