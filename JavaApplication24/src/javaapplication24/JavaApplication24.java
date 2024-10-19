@@ -5,7 +5,9 @@
 package javaapplication24;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /**
@@ -33,7 +35,7 @@ public class JavaApplication24 {
         String filePath = "customers.txt";
     
         try {
-            
+            BufferedWriter writer = new BufferedWriter (new FileWriter("output.txt"));
             BufferedReader br = new BufferedReader (new FileReader (filePath));
             String line;
             
@@ -55,7 +57,7 @@ public class JavaApplication24 {
                 else if (r == 2)
                     code = Integer.parseInt(line);
                     /* parse.Double allow me to get a integer value from a string*/
-                else if (r == 3)
+                else if (r == 3){
                     year = Integer.parseInt(line);
                     /* parse.Double allow me to get a integer value from a string*/
                     
@@ -92,31 +94,25 @@ public class JavaApplication24 {
                 if ((code == 0) || ( code > 3))                    
                     total = purchase;
                     
-                
-                
-            
-                
-                
-                
-                
-                
-                
-                
-                
+                writer.write(name + "\n");
+                writer.write(total + "\n");
+                }
                 count ++ ;
                 System.out.println(line);
                 
-            }    
+                    
         
         
-        }
-    
-    
-    catch (IOException e ){
+            }
+            writer.close();
+            
+        }        
+        catch (IOException e ){
         e. printStackTrace();
         
     
             }
     
+   
     }
 }
