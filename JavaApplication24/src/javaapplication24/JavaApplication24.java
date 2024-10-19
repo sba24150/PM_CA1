@@ -6,6 +6,7 @@ package javaapplication24;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 /**
  *
@@ -24,8 +25,8 @@ public class JavaApplication24 {
     
     
     
-    
-    String filePath = "customer.txt";
+    /* This is the path where the file is stored, it is in the same folder of the program*/
+    String filePath = "customers.txt";
     
     try {
         BufferedReader br = new BufferedReader (new FileReader (filePath));
@@ -34,8 +35,16 @@ public class JavaApplication24 {
     }
     
     
+    catch (IOException e ){
+        e. printStackTrace();
+        
     
     
-    }
+        
+        
+        
+        }
     
+}
+
 }
