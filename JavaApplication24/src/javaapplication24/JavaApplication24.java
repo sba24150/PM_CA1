@@ -89,16 +89,21 @@ public class JavaApplication24 {
                     total = purchase - (purchase * 3 / 100);
                 if ((year < 2024) && (code == 3))
                     total = purchase ;
+                /* I callled the final value "total" so it is less confusing*/
                 
                 /*next line is if the class is not 1 or 2 or 3 */
-                if ((code == 0) || ( code > 3))                    
+                if ((code == 0) || ( code > 3)){                    
                     total = purchase;
+                    System.out.println("Class value not conform for one of the customer");
                     
+                /* the below instruction will write the name followed by the total*/
+                /* I callled the final value Total so it is less confusing*/
+                }
                 writer.write(name + "\n");
                 writer.write(total + "\n");
                 }
                 count ++ ;
-                System.out.println(line);
+                
                 
                     
         
