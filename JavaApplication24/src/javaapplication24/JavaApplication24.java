@@ -27,31 +27,71 @@ public class JavaApplication24 {
     double purchase = 0;
     int code = 0;
     int year = 0;
-    
-    
+    double total = 0;
     
         /* This is the path where the file is stored, it is in the same folder of the program*/
         String filePath = "customers.txt";
     
         try {
+            
             BufferedReader br = new BufferedReader (new FileReader (filePath));
             String line;
             
             /* Created loop to read all the values of the document*/
             while ((line = br.readLine()) !=null ){
                 int r = count % 4 ;
-                
+                /* Defined every line by number and every number is a different value */
+                /* used return four to have a loop of 4 values and to each value correspond*/
+                /* a different information. value 0 is names, value 1 is purchase*/
+                /* value 2 is class that I renamed as code avoiding confusion*/
+                /* and value 3 is years*/
                 if (r == 0)
                     name = line;
                 
                 else if (r == 1)
                     purchase = Double.parseDouble(line);
+                    /* parse.Double allow me to get a double value from a string*/
                 
                 else if (r == 2)
                     code = Integer.parseInt(line);
-                
+                    /* parse.Double allow me to get a integer value from a string*/
                 else if (r == 3)
                     year = Integer.parseInt(line);
+                    /* parse.Double allow me to get a integer value from a string*/
+                    
+                /*below this point I will set the logic behind the calculation */
+                /*of the final value */
+                
+                /*every possible combination for class 1 */
+                if ((year == 2024) && (code == 1))
+                    total = purchase - (purchase * 30 / 100);
+                
+                if ((year < 2024) && (year > 2019) && (code == 1))
+                    total = purchase - (purchase * 20 / 100);
+                
+                if ((year < 2019) && (code == 1))
+                    total = purchase -(purchase *10 /100);
+                
+                /*every possible combination for class 2 */
+                if ((year == 2024) && (code == 2))
+                    total = purchase - (purchase * 15 / 100);
+                
+                if ((year < 2024) && (year > 2019) && (code == 2))
+                    total = purchase - (purchase * 13 / 100);
+                
+                if ((year < 2019) && (code == 2))
+                    total = purchase -(purchase * 5 /100);
+                
+                /*every possible combination for class 3 */
+                if ((year == 2024) && (code == 3))
+                    total = purchase - (purchase * 3 / 100);
+                if ((year < 2024) && (code == 3))
+                    total = purchase ;
+                
+                /*next line is if the class is not 1 or 2 or 3 */
+                if ((code == 0) || ( code > 3))                    
+                    total = purchase;
+                    
                 
                 
             
@@ -66,7 +106,7 @@ public class JavaApplication24 {
                 count ++ ;
                 System.out.println(line);
                 
-            }
+            }    
         
         
         }
@@ -76,8 +116,7 @@ public class JavaApplication24 {
         e. printStackTrace();
         
     
-        }
+            }
     
     }
-
 }
