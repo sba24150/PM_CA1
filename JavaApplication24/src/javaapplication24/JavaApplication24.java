@@ -4,6 +4,9 @@
  */
 package javaapplication24;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 /**
  *
  * @author paolo
@@ -15,6 +18,24 @@ public class JavaApplication24 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+    
+    System.out.println("Paolo Mazzocco Student No. sba 24150");
+    
+    
+    
+    
+    
+    String filePath = "customer.txt";
+    
+    try {
+        BufferedReader br = new BufferedReader (new FileReader (filePath));
+        
+        
+    }
+    
+    
+    
+    
     }
     
 }
