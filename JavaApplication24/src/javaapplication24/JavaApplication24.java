@@ -22,22 +22,22 @@ public class JavaApplication24 {
     public static void main(String[] args) {
         // TODO code application logic here
     
-    /*Paolo Mazzocco Student No. sba 24150 */
+        /*Paolo Mazzocco Student No. sba 24150 */
     
-    int count = 0;
-    String name = "";
-    double purchase = 0;
-    int code = 0;
-    int year = 0;
-    double total = 0;
+        int count = 0;
+        String name = "";
+        double purchase = 0;
+        int code = 0;
+        int year = 0;
+        double total = 0;
     
-        /* This is the path where the file is stored, it is in the same folder of the program*/
-        String filePath = "customers.txt";
+            /* This is the path where the file is stored, it is in the same folder of the program*/
+            String filePath = "customers.txt";
     
-        try {
-            BufferedWriter writer = new BufferedWriter (new FileWriter("output.txt"));
-            BufferedReader br = new BufferedReader (new FileReader (filePath));
-            String line;
+            try {
+                BufferedWriter writer = new BufferedWriter (new FileWriter("output.txt"));
+                BufferedReader br = new BufferedReader (new FileReader (filePath));
+                String line;
             
             /* Created loop to read all the values of the document*/
             while ((line = br.readLine()) !=null ){
@@ -102,11 +102,7 @@ public class JavaApplication24 {
                 writer.write(total + "\n");
                 }
                 count ++ ;
-                
-                
-                    
-        
-        
+
             }
             writer.close();
             
@@ -114,9 +110,7 @@ public class JavaApplication24 {
         catch (IOException e ){
         e. printStackTrace();
         
-    
             }
     
-   
     }
 }
