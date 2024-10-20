@@ -42,9 +42,8 @@ public class JavaApplication24 {
             /* Created loop to read all the values of the document*/
             while ((line = br.readLine()) !=null ){
                 int r = count % 4 ;
-                /* Defined every line by number and every number is a different value */
-                /* used return four to have a loop of 4 values and to each value correspond*/
-                /* a different information. value 0 is names, value 1 is purchase*/
+                /* Used the operator Module to have a looping counter from 0 to 3 */
+                /* value 0 is names, value 1 is purchase*/
                 /* value 2 is class that I renamed as code avoiding confusion*/
                 /* and value 3 is years*/
                 if (r == 0)
@@ -56,10 +55,10 @@ public class JavaApplication24 {
                 
                 else if (r == 2)
                     code = Integer.parseInt(line);
-                    /* parse.Double allow me to get a integer value from a string*/
+                    /* parse.Int allow me to get a integer value from a string*/
                 else if (r == 3){
                     year = Integer.parseInt(line);
-                    /* parse.Double allow me to get a integer value from a string*/
+                    /* parse.Int allow me to get a integer value from a string*/
                     
                 /*below this point I will set the logic behind the calculation */
                 /*of the final value */
@@ -68,36 +67,36 @@ public class JavaApplication24 {
                 if ((year == 2024) && (code == 1))
                     total = purchase - (purchase * 30 / 100);
                 
-                if ((year < 2024) && (year > 2019) && (code == 1))
+                else if ((year < 2024) && (year > 2019) && (code == 1))
                     total = purchase - (purchase * 20 / 100);
                 
-                if ((year < 2019) && (code == 1))
+                else if ((year < 2019) && (code == 1))
                     total = purchase -(purchase *10 /100);
                 
                 /*every possible combination for class 2 */
-                if ((year == 2024) && (code == 2))
+                else if ((year == 2024) && (code == 2))
                     total = purchase - (purchase * 15 / 100);
                 
-                if ((year < 2024) && (year > 2019) && (code == 2))
+                else if ((year < 2024) && (year > 2019) && (code == 2))
                     total = purchase - (purchase * 13 / 100);
                 
-                if ((year < 2019) && (code == 2))
+                else if ((year < 2019) && (code == 2))
                     total = purchase -(purchase * 5 /100);
                 
                 /*every possible combination for class 3 */
-                if ((year == 2024) && (code == 3))
+                else if ((year == 2024) && (code == 3))
                     total = purchase - (purchase * 3 / 100);
-                if ((year < 2024) && (code == 3))
+                else if ((year < 2024) && (code == 3))
                     total = purchase ;
                 /* I callled the final value "total" so it is less confusing*/
                 
                 /*next line is if the class is not 1 or 2 or 3 */
-                if ((code == 0) || ( code > 3)){                    
+                else {                    
                     total = purchase;
                     System.out.println("Class value not conform for one of the customers");
                     
                 /* the below instruction will write the name followed by the total*/
-                /* I callled the final value Total so it is less confusing*/
+                /* I called the final value Total so it is less confusing*/
                 }
                 writer.write(name + "\n");
                 writer.write(total + "\n");
