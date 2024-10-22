@@ -110,7 +110,9 @@ public class JavaApplication24 {
         catch (IOException e ){
         e. printStackTrace();
         
-            }
+        } catch (NumberFormatException e){
+            System.out.println("Invalid value in the file " + e.getLocalizedMessage() );
+        }
     
     }
 }
