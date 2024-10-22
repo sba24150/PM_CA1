@@ -60,52 +60,54 @@ public class JavaApplication24 {
                     year = Integer.parseInt(line);
                     /* parse.Int allow me to get a integer value from a string*/
                     
-                /*below this point I will set the logic behind the calculation */
-                /*of the final value */
+                    /*below this point I will set the logic behind the calculation */
+                    /*of the final value */
                 
-                /*every possible combination for class 1 */
-                if ((year == 2024) && (code == 1))
-                    total = purchase - (purchase * 30 / 100);
+                    /*every possible combination for class 1 */
+                    if ((year == 2024) && (code == 1))
+                        total = purchase - (purchase * 30 / 100);
                 
-                else if ((year < 2024) && (year > 2019) && (code == 1))
-                    total = purchase - (purchase * 20 / 100);
+                    else if ((year < 2024) && (year > 2019) && (code == 1))
+                        total = purchase - (purchase * 20 / 100);
                 
-                else if ((year < 2019) && (code == 1))
-                    total = purchase -(purchase *10 /100);
+                    else if ((year < 2019) && (code == 1))
+                        total = purchase -(purchase *10 /100);
                 
-                /*every possible combination for class 2 */
-                else if ((year == 2024) && (code == 2))
-                    total = purchase - (purchase * 15 / 100);
+                    /*every possible combination for class 2 */
+                    else if ((year == 2024) && (code == 2))
+                        total = purchase - (purchase * 15 / 100);
                 
-                else if ((year < 2024) && (year > 2019) && (code == 2))
-                    total = purchase - (purchase * 13 / 100);
+                    else if ((year < 2024) && (year > 2019) && (code == 2))
+                        total = purchase - (purchase * 13 / 100);
                 
-                else if ((year < 2019) && (code == 2))
-                    total = purchase -(purchase * 5 /100);
+                    else if ((year < 2019) && (code == 2))
+                        total = purchase -(purchase * 5 /100);
                 
-                /*every possible combination for class 3 */
-                else if ((year == 2024) && (code == 3))
-                    total = purchase - (purchase * 3 / 100);
-                else if ((year < 2024) && (code == 3))
-                    total = purchase ;
-                /* I callled the final value "total" so it is less confusing*/
+                    /*every possible combination for class 3 */
+                    else if ((year == 2024) && (code == 3))
+                        total = purchase - (purchase * 3 / 100);
+                    else if ((year < 2024) && (code == 3))
+                        total = purchase ;
+                    /* I callled the final value "total" so it is less confusing*/
                 
-                /*next line is if the class is not 1 or 2 or 3 */
-                else {                    
-                    total = purchase;
-                    System.out.println("Class value not conform for the following customer: no discount applied");
+                    /*next line is if the class is not 1 or 2 or 3 */
+                    else {                    
+                        total = purchase;
+                        System.out.println("Class value not conform for the following customer: no discount applied");
                     
-                /* the below instruction will write the name followed by the total*/
-                /* I called the final value Total so it is less confusing*/
-                }
-                writer.write(name + "\n");
-                writer.write(total + "\n");
-                System.out.println(name + "\n" + total);
+                    /* the below instruction will write the name followed by the total*/
+                    /* I called the final value Total so it is less confusing*/
+                    }
+                    writer.write(name + "\n");
+                    writer.write(total + "\n");
+                    System.out.println(name + "\n" + total);
                 }
                 count ++ ;
+                /*Incrementing the counter to read the next line in the loop*/
 
             }
-            writer.close();
+            writer.close(); 
+            /*Closing writer of the output file at the end of the while loop*/
             
         }        
         catch (IOException e ){
