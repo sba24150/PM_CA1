@@ -93,7 +93,7 @@ public class JavaApplication24 {
                     /*next line is if the class is not 1 or 2 or 3 */
                     else {                    
                         total = purchase;
-                        System.out.println("Class value not conform for the following customer: no discount applied");
+                        System.out.println("Data not valid for the following customer: no discount applied");
                     
                     /* the below instruction will write the name followed by the total*/
                     /* I called the final value Total so it is less confusing*/
