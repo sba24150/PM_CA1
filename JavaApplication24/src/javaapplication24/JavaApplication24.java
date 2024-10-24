@@ -41,81 +41,98 @@ public class JavaApplication24 {
             
             /* Created loop to read all the values of the document*/
             while ((line = br.readLine()) !=null ){
+                
                 int r = count % 4 ;
-                /* Used the operator Module to have a looping counter from 0 to 3 */
-                /* value 0 is names, value 1 is purchase*/
-                /* value 2 is class that I renamed as code avoiding confusion*/
-                /* and value 3 is years*/
-                if (r == 0)
-                    name = line;
-                
-                else if (r == 1)
-                    purchase = Double.parseDouble(line);
-                    /* parse.Double allow me to get a double value from a string*/
-                
-                else if (r == 2)
-                    code = Integer.parseInt(line);
-                    /* parse.Int allow me to get a integer value from a string*/
-                else if (r == 3){
-                    year = Integer.parseInt(line);
-                    /* parse.Int allow me to get a integer value from a string*/
-                    
-                    /*below this point I will set the logic behind the calculation */
-                    /*of the final value */
-                
-                    /*every possible combination for class 1 */
-                    if ((year == 2024) && (code == 1))
-                        total = purchase - (purchase * 30 / 100);
-                
-                    else if ((year < 2024) && (year > 2019) && (code == 1))
-                        total = purchase - (purchase * 20 / 100);
-                
-                    else if ((year < 2019) && (code == 1))
-                        total = purchase -(purchase *10 /100);
-                
-                    /*every possible combination for class 2 */
-                    else if ((year == 2024) && (code == 2))
-                        total = purchase - (purchase * 15 / 100);
-                
-                    else if ((year < 2024) && (year > 2019) && (code == 2))
-                        total = purchase - (purchase * 13 / 100);
-                
-                    else if ((year < 2019) && (code == 2))
-                        total = purchase -(purchase * 5 /100);
-                
-                    /*every possible combination for class 3 */
-                    else if ((year == 2024) && (code == 3))
-                        total = purchase - (purchase * 3 / 100);
-                    else if ((year < 2024) && (code == 3))
-                        total = purchase ;
-                    /* I callled the final value "total" so it is less confusing*/
-                
-                    /*next line is if the class is not 1 or 2 or 3 */
-                    else {                    
-                        total = purchase;
-                        System.out.println("Data not valid for the following customer: no discount applied");
-                    
-                    /* the below instruction will write the name followed by the total*/
-                    /* I called the final value Total so it is less confusing*/
+                    /* Used the operator Module to have a looping counter from 0 to 3 */
+                    /* value 0 is names, value 1 is purchase*/
+                    /* value 2 is class that I renamed as code avoiding confusion*/
+                    /* and value 3 is years*/
+                    switch (r) {
+                        case 0:
+                            name = line;
+                            break;
+                        case 1:
+                            try {
+                            purchase = Double.parseDouble(line);
+                            /* parse.Double allow me to get a double value from a string*/
+                            } catch (NumberFormatException e){
+                                System.out.println("Invalid value in the file " + e.getLocalizedMessage() );
+                                purchase = 0;
+                            }
+                            break;
+                        case 2:
+                            try{
+                            code = Integer.parseInt(line);
+                            /* parse.Int allow me to get a integer value from a string*/
+                            }catch (NumberFormatException e){
+                                System.out.println("Invalid value in the file " + e.getLocalizedMessage() );
+                                code = 0;
+                            }
+                            break;
+                        case 3:
+                            try{
+                            year = Integer.parseInt(line);
+                            /* parse.Int allow me to get a integer value from a string*/
+                            /*below this point I will set the logic behind the calculation */
+                            /*of the final value */
+                            }catch (NumberFormatException e){
+                                System.out.println("Invalid value in the file " + e.getLocalizedMessage() );
+                                year = 0;
+                            }
+                            
+                            /*every possible combination for class 1 */
+                            if ((year == 2024) && (code == 1))
+                                total = purchase - (purchase * 30 / 100);
+                            
+                            else if ((year < 2024) && (year > 2019) && (code == 1))
+                                total = purchase - (purchase * 20 / 100);
+                            
+                            else if ((year < 2019) && (code == 1))
+                                total = purchase -(purchase *10 /100);
+                            
+                            /*every possible combination for class 2 */
+                            else if ((year == 2024) && (code == 2))
+                                total = purchase - (purchase * 15 / 100);
+                            
+                            else if ((year < 2024) && (year > 2019) && (code == 2))
+                                total = purchase - (purchase * 13 / 100);
+                            
+                            else if ((year < 2019) && (code == 2))
+                                total = purchase -(purchase * 5 /100);
+                            
+                            /*every possible combination for class 3 */
+                            else if ((year == 2024) && (code == 3))
+                                total = purchase - (purchase * 3 / 100);
+                            else if ((year < 2024) && (code == 3))
+                                total = purchase ;
+                            /* I callled the final value "total" so it is less confusing*/
+                            
+                            /*next line is if the class is not 1 or 2 or 3 */
+                            else {
+                                total = purchase;
+                                System.out.println("Data not valid for the following customer: no discount applied");
+                                
+                                /* the below instruction will write the name followed by the total*/
+                                /* I called the final value Total so it is less confusing*/
+                            }       writer.write(name + "\n");
+                            writer.write(total + "\n");
+                            System.out.println(name + "\n" + total);
+                            break;
+                        default:
+                            break;
                     }
-                    writer.write(name + "\n");
-                    writer.write(total + "\n");
-                    System.out.println(name + "\n" + total);
-                }
                 count ++ ;
                 /*Incrementing the counter to read the next line in the loop*/
-
+                
             }
             writer.close(); 
             /*Closing writer of the output file at the end of the while loop*/
             
-        }        
-        catch (IOException e ){
-        e. printStackTrace();
+        }  catch (IOException e ){
+            e. printStackTrace();      
         
-        } catch (NumberFormatException e){
-            System.out.println("Invalid value in the file " + e.getLocalizedMessage() );
-        }
+        
+        } 
     
     }
 }
