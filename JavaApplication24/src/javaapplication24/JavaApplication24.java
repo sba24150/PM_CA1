@@ -83,43 +83,43 @@ public class JavaApplication24 {
                             switch (code){
                                 case 1:
                                 
-                                /*every possible combination for class 1 */
-                                if (year == 2024) 
-                                    total = purchase - (purchase * 30 / 100);
+                                    /*every possible combination for class 1 */
+                                    if (year == 2024) 
+                                        total = purchase - (purchase * 30 / 100);
                             
-                                else if ((year < 2024) && (year > 2019))
-                                    total = purchase - (purchase * 20 / 100);
+                                    else if ((year < 2024) && (year > 2019))
+                                        total = purchase - (purchase * 20 / 100);
                             
-                                else if (year < 2019) 
-                                    total = purchase -(purchase *10 /100);
-                                    break;
+                                    else if (year < 2019) 
+                                        total = purchase -(purchase *10 /100);
+                                break;
                             
                                 case 2:
-                                /*every possible combination for class 2 */
-                                if (year == 2024) 
-                                    total = purchase - (purchase * 15 / 100);
+                                    /*every possible combination for class 2 */
+                                    if (year == 2024) 
+                                        total = purchase - (purchase * 15 / 100);
                             
-                                else if ((year < 2024) && (year > 2019))
-                                    total = purchase - (purchase * 13 / 100);
+                                    else if ((year < 2024) && (year > 2019))
+                                        total = purchase - (purchase * 13 / 100);
                             
-                                else if (year < 2019) 
-                                    total = purchase -(purchase * 5 /100);
-                                    break;
+                                    else if (year < 2019) 
+                                        total = purchase -(purchase * 5 /100);
+                                break;
                                 
                                 case 3:
-                                /*every possible combination for class 3 */
-                                if (year == 2024)  
-                                    total = purchase - (purchase * 3 / 100);
-                                else if (year < 2024) 
-                                    total = purchase ;
-                                /* I callled the final value "total" so it is less confusing*/
-                                    break;
+                                    /*every possible combination for class 3 */
+                                    if (year == 2024)  
+                                        total = purchase - (purchase * 3 / 100);
+                                    else if (year < 2024) 
+                                        total = purchase ;
+                                    /* I callled the final value "total" so it is less confusing*/
+                                break;
                             
                                 /*next line is if the class is not 1 or 2 or 3 */
-                                    default: 
+                                default: 
                                     total = purchase;
-                                    System.out.println("Data not valid for the following customer: no discount applied");
-                                    break;
+                                    System.out.println("Data not valid for the following customer: no d271iscount applied");
+                                break;
                             }
                                 
                                 /* the below instruction will write the name followed by the total*/
