@@ -92,7 +92,7 @@ public class JavaApplication24 {
                             
                                     else if (year < 2019) 
                                         total = purchase -(purchase *10 /100);
-                                break;
+                                    break;
                             
                                 case 2:
                                     /*every possible combination for class 2 */
@@ -104,7 +104,7 @@ public class JavaApplication24 {
                             
                                     else if (year < 2019) 
                                         total = purchase -(purchase * 5 /100);
-                                break;
+                                    break;
                                 
                                 case 3:
                                     /*every possible combination for class 3 */
@@ -113,13 +113,13 @@ public class JavaApplication24 {
                                     else if (year < 2024) 
                                         total = purchase ;
                                     /* I callled the final value "total" so it is less confusing*/
-                                break;
+                                    break;
                             
                                 /*next line is if the class is not 1 or 2 or 3 */
                                 default: 
                                     total = purchase;
                                     System.out.println("Data not valid for the following customer: no d271iscount applied");
-                                break;
+                                    break;
                             }
                                 
                                 /* the below instruction will write the name followed by the total*/
