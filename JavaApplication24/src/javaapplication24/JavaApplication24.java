@@ -83,7 +83,6 @@ public class JavaApplication24 {
                             switch (code){
                                 case 1:
                                 
-                            
                                 /*every possible combination for class 1 */
                                 if (year == 2024) 
                                     total = purchase - (purchase * 30 / 100);
@@ -142,8 +141,8 @@ public class JavaApplication24 {
             /*Closing writer of the output file at the end of the while loop*/
             
         }  catch (IOException e ){
-            e. printStackTrace();      
-        
+            System.out.println("Input file is missing: " + e);
+                  
         
         } 
     
