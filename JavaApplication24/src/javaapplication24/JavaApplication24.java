@@ -15,7 +15,7 @@ import java.io.IOException;
  * @author paolo
  */
 public class JavaApplication24 {
-
+    /*Github link below*/
     /** https://github.com/sba24150/PM_CA1
      * @param args the command line arguments
      */
@@ -80,46 +80,59 @@ public class JavaApplication24 {
                                 year = 0;
                             }
                             
-                            /*every possible combination for class 1 */
-                            if ((year == 2024) && (code == 1))
-                                total = purchase - (purchase * 30 / 100);
+                            switch (code){
+                                case 1:
+                                
                             
-                            else if ((year < 2024) && (year > 2019) && (code == 1))
-                                total = purchase - (purchase * 20 / 100);
+                                /*every possible combination for class 1 */
+                                if (year == 2024) 
+                                    total = purchase - (purchase * 30 / 100);
                             
-                            else if ((year < 2019) && (code == 1))
-                                total = purchase -(purchase *10 /100);
+                                else if ((year < 2024) && (year > 2019))
+                                    total = purchase - (purchase * 20 / 100);
                             
-                            /*every possible combination for class 2 */
-                            else if ((year == 2024) && (code == 2))
-                                total = purchase - (purchase * 15 / 100);
+                                else if (year < 2019) 
+                                    total = purchase -(purchase *10 /100);
+                                    break;
                             
-                            else if ((year < 2024) && (year > 2019) && (code == 2))
-                                total = purchase - (purchase * 13 / 100);
+                                case 2:
+                                /*every possible combination for class 2 */
+                                if (year == 2024) 
+                                    total = purchase - (purchase * 15 / 100);
                             
-                            else if ((year < 2019) && (code == 2))
-                                total = purchase -(purchase * 5 /100);
+                                else if ((year < 2024) && (year > 2019))
+                                    total = purchase - (purchase * 13 / 100);
                             
-                            /*every possible combination for class 3 */
-                            else if ((year == 2024) && (code == 3))
-                                total = purchase - (purchase * 3 / 100);
-                            else if ((year < 2024) && (code == 3))
-                                total = purchase ;
-                            /* I callled the final value "total" so it is less confusing*/
+                                else if (year < 2019) 
+                                    total = purchase -(purchase * 5 /100);
+                                    break;
+                                
+                                case 3:
+                                /*every possible combination for class 3 */
+                                if (year == 2024)  
+                                    total = purchase - (purchase * 3 / 100);
+                                else if (year < 2024) 
+                                    total = purchase ;
+                                /* I callled the final value "total" so it is less confusing*/
+                                    break;
                             
-                            /*next line is if the class is not 1 or 2 or 3 */
-                            else {
-                                total = purchase;
-                                System.out.println("Data not valid for the following customer: no discount applied");
+                                /*next line is if the class is not 1 or 2 or 3 */
+                                    default: 
+                                    total = purchase;
+                                    System.out.println("Data not valid for the following customer: no discount applied");
+                                    break;
+                            }
                                 
                                 /* the below instruction will write the name followed by the total*/
                                 /* I called the final value Total so it is less confusing*/
-                            }       writer.write(name + "\n");
+                            writer.write(name + "\n");
                             writer.write(total + "\n");
                             System.out.println(name + "\n" + total);
                             break;
+                            
                         default:
                             break;
+                                
                     }
                 count ++ ;
                 /*Incrementing the counter to read the next line in the loop*/
